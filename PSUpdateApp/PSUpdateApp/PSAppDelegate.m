@@ -7,6 +7,8 @@
 //
 
 #import "PSAppDelegate.h"
+#import "MainViewController.h"
+#import "PSUpdateApp.h"
 
 @implementation PSAppDelegate
 
@@ -15,7 +17,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[MainViewController alloc] init];
     [self.window makeKeyAndVisible];
+    
+    [PSUpdateApp startWithAppID:@"529119648"];
+    
     return YES;
 }
 
@@ -39,6 +45,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:nil];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

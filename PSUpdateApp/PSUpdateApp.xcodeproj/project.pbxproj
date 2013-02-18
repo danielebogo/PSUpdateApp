@@ -16,9 +16,14 @@
 		10A2FCEC16D29862008C1FDB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A2FCEB16D29862008C1FDB /* Default.png */; };
 		10A2FCEE16D29862008C1FDB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A2FCED16D29862008C1FDB /* Default@2x.png */; };
 		10A2FCF016D29862008C1FDB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A2FCEF16D29862008C1FDB /* Default-568h@2x.png */; };
+		10A2FCF816D298F5008C1FDB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A2FCF716D298F5008C1FDB /* MainViewController.m */; };
+		10A2FCFC16D29BC3008C1FDB /* PSUpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A2FCFB16D29BC3008C1FDB /* PSUpdateApp.m */; };
+		10E51F7F16D2D32700520862 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 10E51F8116D2D32700520862 /* Localizable.strings */; };
+		889403B7834C44408D1C9A54 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FF8E79789742E59BD4A585 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05FF8E79789742E59BD4A585 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A2FCD616D29862008C1FDB /* PSUpdateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSUpdateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A2FCD916D29862008C1FDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		10A2FCDB16D29862008C1FDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,6 +37,13 @@
 		10A2FCEB16D29862008C1FDB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		10A2FCED16D29862008C1FDB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		10A2FCEF16D29862008C1FDB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		10A2FCF616D298F5008C1FDB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		10A2FCF716D298F5008C1FDB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		10A2FCFA16D29BC3008C1FDB /* PSUpdateApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSUpdateApp.h; path = Model/PSUpdateApp.h; sourceTree = "<group>"; };
+		10A2FCFB16D29BC3008C1FDB /* PSUpdateApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSUpdateApp.m; path = Model/PSUpdateApp.m; sourceTree = "<group>"; };
+		10A2FCFD16D29DDE008C1FDB /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWLSynthesizeSingleton.h; path = Model/CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
+		10E51F8016D2D32700520862 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DD6B5C985D3E4316A8B7B6D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +54,7 @@
 				10A2FCDA16D29862008C1FDB /* UIKit.framework in Frameworks */,
 				10A2FCDC16D29862008C1FDB /* Foundation.framework in Frameworks */,
 				10A2FCDE16D29862008C1FDB /* CoreGraphics.framework in Frameworks */,
+				889403B7834C44408D1C9A54 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +64,11 @@
 		10A2FCCD16D29862008C1FDB = {
 			isa = PBXGroup;
 			children = (
+				10A2FCF916D29B20008C1FDB /* Model */,
 				10A2FCDF16D29862008C1FDB /* PSUpdateApp */,
 				10A2FCD816D29862008C1FDB /* Frameworks */,
 				10A2FCD716D29862008C1FDB /* Products */,
+				DD6B5C985D3E4316A8B7B6D2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +86,7 @@
 				10A2FCD916D29862008C1FDB /* UIKit.framework */,
 				10A2FCDB16D29862008C1FDB /* Foundation.framework */,
 				10A2FCDD16D29862008C1FDB /* CoreGraphics.framework */,
+				05FF8E79789742E59BD4A585 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,6 +96,8 @@
 			children = (
 				10A2FCE816D29862008C1FDB /* PSAppDelegate.h */,
 				10A2FCE916D29862008C1FDB /* PSAppDelegate.m */,
+				10A2FCF616D298F5008C1FDB /* MainViewController.h */,
+				10A2FCF716D298F5008C1FDB /* MainViewController.m */,
 				10A2FCE016D29862008C1FDB /* Supporting Files */,
 			);
 			path = PSUpdateApp;
@@ -89,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				10A2FCE116D29862008C1FDB /* PSUpdateApp-Info.plist */,
+				10E51F8116D2D32700520862 /* Localizable.strings */,
 				10A2FCE216D29862008C1FDB /* InfoPlist.strings */,
 				10A2FCE516D29862008C1FDB /* main.m */,
 				10A2FCE716D29862008C1FDB /* PSUpdateApp-Prefix.pch */,
@@ -97,6 +116,17 @@
 				10A2FCEF16D29862008C1FDB /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10A2FCF916D29B20008C1FDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10A2FCFD16D29DDE008C1FDB /* CWLSynthesizeSingleton.h */,
+				10A2FCFA16D29BC3008C1FDB /* PSUpdateApp.h */,
+				10A2FCFB16D29BC3008C1FDB /* PSUpdateApp.m */,
+			);
+			name = Model;
+			path = PSUpdateApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +139,7 @@
 				10A2FCD216D29862008C1FDB /* Sources */,
 				10A2FCD316D29862008C1FDB /* Frameworks */,
 				10A2FCD416D29862008C1FDB /* Resources */,
+				E1C437EC47BC4FBA84BBF1CF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,10 +186,28 @@
 				10A2FCEC16D29862008C1FDB /* Default.png in Resources */,
 				10A2FCEE16D29862008C1FDB /* Default@2x.png in Resources */,
 				10A2FCF016D29862008C1FDB /* Default-568h@2x.png in Resources */,
+				10E51F7F16D2D32700520862 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E1C437EC47BC4FBA84BBF1CF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		10A2FCD216D29862008C1FDB /* Sources */ = {
@@ -167,6 +216,8 @@
 			files = (
 				10A2FCE616D29862008C1FDB /* main.m in Sources */,
 				10A2FCEA16D29862008C1FDB /* PSAppDelegate.m in Sources */,
+				10A2FCF816D298F5008C1FDB /* MainViewController.m in Sources */,
+				10A2FCFC16D29BC3008C1FDB /* PSUpdateApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +230,14 @@
 				10A2FCE316D29862008C1FDB /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		10E51F8116D2D32700520862 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10E51F8016D2D32700520862 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -242,6 +301,7 @@
 		};
 		10A2FCF416D29862008C1FDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD6B5C985D3E4316A8B7B6D2 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PSUpdateApp/PSUpdateApp-Prefix.pch";
@@ -254,6 +314,7 @@
 		};
 		10A2FCF516D29862008C1FDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD6B5C985D3E4316A8B7B6D2 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PSUpdateApp/PSUpdateApp-Prefix.pch";
@@ -283,6 +344,7 @@
 				10A2FCF516D29862008C1FDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
