@@ -21,7 +21,7 @@ typedef enum {
 
 CWL_DECLARE_SINGLETON_FOR_CLASS(PSUpdateApp)
 
-@property (nonatomic) NSString *appID, *appStoreLocation, *appName;
+@property (nonatomic) NSString *appID, *appStoreLocation, *appName, *route;
 @property (nonatomic) UpdateStrategy strategy;
 @property (nonatomic) int daysUntilPrompt;
 @property (nonatomic) NSDate *remindDate;

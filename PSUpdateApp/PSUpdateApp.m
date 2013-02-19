@@ -14,7 +14,7 @@
 #define kCurrentAppVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 
 @interface PSUpdateApp () <UIAlertViewDelegate> {
-    NSString *_newVersion, *_iTunesUrl;
+    NSString *_newVersion, *_updatePageUrl;
 }
 
 @end
@@ -75,19 +75,16 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
 
 - (NSString *) setAppleURL
 {
-    return [NSString stringWithFormat:@"%@id=%@&country=%@", APPLE_URL, _appID, _appStoreLocation];
+    return self.route ? self.route : [NSString stringWithFormat:@"%@id=%@&country=%@", APPLE_URL, _appID, _appStoreLocation];
 }
 
 #pragma mark - Check version
 
 - (BOOL) isNewVersion:(NSDictionary *)dictionary
 {
-    if ( (int)[dictionary objectForKey:@"resultCount"] >= 1 ) {
-        
+    if ( [[dictionary objectForKey:@"results"] count] > 0 ) {
         _newVersion = [[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"version"];
-        _iTunesUrl = [[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"trackViewUrl"];
-        
-        NSLog(@"CURRENT %@ - NEW %@", kCurrentAppVersion, _newVersion);
+        _updatePageUrl = [[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"trackViewUrl"];
         
         return [kCurrentAppVersion compare:_newVersion options:NSNumericSearch] == NSOrderedAscending;
     } else {
@@ -117,7 +114,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
 
 - (void) showAlert
 {
-    switch (self.strategy) {
+    switch ( self.strategy ) {
         case DefaultStrategy:
         default:
         {
@@ -159,31 +156,31 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {   
-    switch (self.strategy) {
+    switch ( self.strategy ) {
         case DefaultStrategy:
         default:
         {
-            if ( buttonIndex == 0) {
+            if ( buttonIndex == 0 ) {
                 [[NSUserDefaults standardUserDefaults] setObject:_newVersion forKey:@"skipVersion"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
             } else {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_iTunesUrl]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_updatePageUrl]];
             }
         }
 
             break;
             
         case ForceStrategy:
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_iTunesUrl]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_updatePageUrl]];
             break;
             
         case RemindStrategy:
         {
-            if ( buttonIndex == 0) {
+            if ( buttonIndex == 0 ) {
                 [[NSUserDefaults standardUserDefaults] setObject:_newVersion forKey:@"skipVersion"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-            } else if ( buttonIndex == 1) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_iTunesUrl]];
+            } else if ( buttonIndex == 1 ) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_updatePageUrl]];
             } else {
                 [self setRemindDate:[NSDate date]];
             }
@@ -199,20 +196,16 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
 {
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
-    NSDate *dateA = [self remindDate];
-    NSDate *dateB = [NSDate date];
+    NSDate *today = [NSDate date];
     
-    NSDate *dateToRound = [dateA earlierDate:dateB];
-    int flags = ( NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit );
-    NSDateComponents * dateComponents =
-    [gregorian components:flags fromDate:dateToRound];
+    NSDate *dateToRound = [[self remindDate] earlierDate:today];
+    NSDateComponents * dateComponents = [gregorian components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
+                                                     fromDate:dateToRound];
     
     NSDate *roundedDate = [gregorian dateFromComponents:dateComponents];
-    NSDate *otherDate = (dateToRound == dateA) ? dateB : dateA ;
+    NSDate *otherDate = (dateToRound == [self remindDate]) ? today : [self remindDate] ;
     NSInteger diff = abs([roundedDate timeIntervalSinceDate:otherDate]);
     NSInteger daysDifference = floor(diff/(24 * 60 * 60));
-    
-    NSLog(@"%@ - %@ - %i", dateA, dateB, daysDifference);
     
     return daysDifference >= _daysUntilPrompt;
 }
