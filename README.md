@@ -6,7 +6,8 @@ PSUpdateApp
 ### About
 **PSUpdateApp** notify you if exist a new version of your iOS application available in the AppStore or in other place.<br />
 If a new version is available, PSUpdateApp presents an UIAlertView, that informs you of the newer version, and gives the option to update the application.<br />
-The component is based on **[AFNetworking](https://github.com/AFNetworking/AFNetworking/ "AFNetworking")** framework, using [`AFJSONRequestOperation`](http://afnetworking.github.com/AFNetworking/Classes/AFJSONRequestOperation.html) method to read and parse the json response.
+The component is based on **[AFNetworking](https://github.com/AFNetworking/AFNetworking/ "AFNetworking")** framework, using [`AFJSONRequestOperation`](http://afnetworking.github.com/AFNetworking/Classes/AFJSONRequestOperation.html) method to read and parse the json response.<br />
+The object is a singleton based on Matt Gallager object ([More informations here](http://www.cocoawithlove.com/2008/11/singletons-appdelegates-and-top-level.html)).
 
 ##Getting Started
 
