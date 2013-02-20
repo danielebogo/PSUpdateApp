@@ -58,7 +58,7 @@ PSUpdateApp has a simple integration:
 - Import **PSUpdateApp.h** into your AppDelegate or Pre-Compiler Header (.pch)
 - In your **AppDelegate.m** create your PSUpdateApp object.
 
-<pre>
+``` objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -97,7 +97,7 @@ PSUpdateApp has a simple integration:
 
     return YES;
 }
-</pre> 
+```
 
 ### Notes
 
