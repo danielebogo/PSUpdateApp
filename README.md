@@ -131,6 +131,8 @@ If you want use PSUpdateApp in a distribution ad hoc, or in an enterprise app, y
 }
 </pre>
 
+Use `setURLAdHoc:` if you want create a `stringWithFormat:` between your custom url and the appStoreLocation property of PSUpdateApp.
+
 ### Notes
 
 - It's localized.
