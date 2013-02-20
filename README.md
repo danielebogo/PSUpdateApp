@@ -56,7 +56,7 @@ $ open MyProject.xcworkspace
 PSUpdateApp has a simple integration:
 
 - Import **PSUpdateApp.h** into your AppDelegate or Pre-Compiler Header (.pch)
-- In your **AppDelegate.m** create your PSUpdateApp object.
+- In your **AppDelegate.m** [`application:didFinishLaunchingWithOptions:`] create your PSUpdateApp object.
 
 ``` objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -96,6 +96,24 @@ PSUpdateApp has a simple integration:
 //    [[PSUpdateApp sharedPSUpdateApp] setDaysUntilPrompt:10];
 
     return YES;
+}
+```
+- In your **AppDelegate.m** [`applicationDidBecomeActive:`] start detect the available app version.
+
+``` objective-c
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+//--- DETECT VERSION
+//    Start to detect the version. In this case the block is nil, and the component use the default alert
+    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:nil];
+    
+//--- DETECT VERSION WITH BLOCK
+//    If you want you can use the completion block to implement you custom alert and actions
+//    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success) {
+//        NSLog(@"UPDATE");
+//    }];
 }
 ```
 
