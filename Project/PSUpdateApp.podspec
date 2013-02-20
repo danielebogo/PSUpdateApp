@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.source_files = 'PSUpdateApp/*.{h,m}'
-  s.resource = 'Localization/**'
+  s.resource = 'PSUpdateApp/Localizations/**'
 
   s.dependency 'AFNetworking','~>1.1.0'
 end
