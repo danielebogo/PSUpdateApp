@@ -135,9 +135,10 @@ Use `setURLAdHoc:` if you want create a `stringWithFormat:` between your custom 
 
 ### Notes
 
-- Use the PSUpdateApp properties to change the PSUpdateApp default value: for example the **app name** or **store location**.
-- It's localized.
-- It has a simple BDD test inside the example project.
+- This project required ARC and iOS target from 5.0
+- Use the PSUpdateApp properties to change the PSUpdateApp default value: for example the **app name** or **store location**
+- It's localized
+- It has a simple BDD test inside the example project
 
 ### Recognition:
 

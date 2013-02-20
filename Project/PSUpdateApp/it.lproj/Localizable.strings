@@ -10,7 +10,7 @@
 
 "alert.success.default.text" = "È disponibile una nuova versione di %@. Vuoi aggiornare alla versione %@ adesso?";
 "alert.success.force.text" = "È disponibile una nuova versione di %@. Aggiorna alla versione %@ per continuare.";
-"alert.success.remindme.text" = "È disponibile una nuova versione di %@. Vuoi aggiornare alla versione %@? Aggiorna ora o ricordamelo dopo";
+"alert.success.remindme.text" = "È disponibile una nuova versione di %@. Vuoi aggiornare alla versione %@? Aggiorna ora o ricordamelo in seguito.";
 
 "alert.button.update" = "Aggiorna";
 "alert.button.skip" = "Salta questa versione";
