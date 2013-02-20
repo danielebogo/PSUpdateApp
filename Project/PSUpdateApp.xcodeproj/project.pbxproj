@@ -46,6 +46,9 @@
 		1056B27316D3F7E90061FCF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1056B27816D3F7E90061FCF0 /* PSUpdateAppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PSUpdateAppTests-Prefix.pch"; sourceTree = "<group>"; };
 		1056B27C16D3FD200061FCF0 /* PSUpdateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUpdateSpec.m; sourceTree = "<group>"; };
+		106B179816D56F29005AE3DB /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		106B179916D56F29005AE3DB /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		106B179A16D56F29005AE3DB /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		10A2FCD616D29862008C1FDB /* PSUpdateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSUpdateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A2FCD916D29862008C1FDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		10A2FCDB16D29862008C1FDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -245,6 +248,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				it,
 			);
 			mainGroup = 10A2FCCD16D29862008C1FDB;
 			productRefGroup = 10A2FCD716D29862008C1FDB /* Products */;
@@ -359,6 +363,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1056B27316D3F7E90061FCF0 /* en */,
+				106B179A16D56F29005AE3DB /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				10A2FCE316D29862008C1FDB /* en */,
+				106B179916D56F29005AE3DB /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				10E51F8016D2D32700520862 /* en */,
+				106B179816D56F29005AE3DB /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
