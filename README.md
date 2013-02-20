@@ -4,8 +4,8 @@ PSUpdateApp
 ## A simple method to notify users that a new version of your iOS app is available.
 
 ### About
-**PSUpdateApp** notify you if exist a new version of your iOS application available in the AppStore or in other place.<br />
-If a new version is available, PSUpdateApp presents an UIAlertView, that informs you of the newer version, and gives the option to update the application.<br />
+**PSUpdateApp** notifies you if a new version of your iOS application is available in the AppStore or in any other place.<br />
+If a new version is available, PSUpdateApp presents an UIAlertView, that informs you of the newer version, and gives you the option to update the application.<br />
 The component is based on **[AFNetworking](https://github.com/AFNetworking/AFNetworking/ "AFNetworking")** framework, using [`AFJSONRequestOperation`](http://afnetworking.github.com/AFNetworking/Classes/AFJSONRequestOperation.html) method to read and parse the JSON response.<br />
 The object is a singleton based on **Matt Gallager** object ([More informations here](http://www.cocoawithlove.com/2008/11/singletons-appdelegates-and-top-level.html)).
 
@@ -118,7 +118,7 @@ PSUpdateApp has a simple integration:
 ```
 ### Custom Url
 
-If you want use PSUpdateApp in a distribution ad hoc, or in an enterprise app, you can start PSUpdateApp with `startWithRoute:` using a JSON with this structure:
+If you want to use PSUpdateApp in a distribution ad hoc, or in an enterprise app, you can start PSUpdateApp with `startWithRoute:` using a JSON with this structure:
 
 <pre>
 {
@@ -131,11 +131,11 @@ If you want use PSUpdateApp in a distribution ad hoc, or in an enterprise app, y
 }
 </pre>
 
-Use `setURLAdHoc:` if you want create a `stringWithFormat:` between your custom url and the appStoreLocation property of PSUpdateApp.
+Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your custom url and the appStoreLocation property of PSUpdateApp.
 
 ### Notes
 
-- This project required ARC and iOS target from 5.0
+- This project requires ARC and iOS target from 5.0
 - Use the PSUpdateApp properties to change the PSUpdateApp default value: for example the **app name** or **store location**
 - It's localized
 - It has a simple BDD test inside the example project
