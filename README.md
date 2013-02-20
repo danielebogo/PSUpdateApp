@@ -51,12 +51,12 @@ $ open MyProject.xcworkspace
 
 [Download PSUpdateApp](https://github.com/danielebogo/PSUpdateApp/archive/master.zip) or play with the [example project](https://github.com/danielebogo/PSUpdateApp/tree/master/Project). Open **PSUpdateApp.xcworkspace** (CocoaPods need).
 
-### Integration
+## Integration
 
 PSUpdateApp has a simple integration:
 
 - Import **PSUpdateApp.h** into your AppDelegate or Pre-Compiler Header (.pch)
-- In your **AppDelegate.m** [`application:didFinishLaunchingWithOptions:`] create your PSUpdateApp object.
+- In your AppDelegate.m `application:didFinishLaunchingWithOptions:` create your PSUpdateApp object.
 
 ``` objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -98,7 +98,7 @@ PSUpdateApp has a simple integration:
     return YES;
 }
 ```
-- In your **AppDelegate.m** [`applicationDidBecomeActive:`] start detect the available app version.
+- In your AppDelegate.m `applicationDidBecomeActive:` start detect the available app version.
 
 ``` objective-c
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -110,12 +110,26 @@ PSUpdateApp has a simple integration:
     [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:nil];
     
 //--- DETECT VERSION WITH BLOCK
-//    If you want you can use the completion block to implement you custom alert and actions
+//    You can use the completion block to implement you custom alert and actions
 //    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success) {
 //        NSLog(@"UPDATE");
 //    }];
 }
 ```
+### Custom Url
+
+If you want use PSUpdateApp in a distribution ad hoc, or in an enterprise app, you can start PSUpdateApp with `startWithRoute:` using a JSON with this structure:
+
+<pre>
+{
+  "results": [
+    {
+      "version": "1.0",
+      "trackViewUrl": "http://paperstreetsoapdesign.com/apps/updateapp/update.html"
+    }
+  ]
+}
+</pre>
 
 ### Notes
 
