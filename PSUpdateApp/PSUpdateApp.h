@@ -21,13 +21,16 @@ typedef enum {
 
 CWL_DECLARE_SINGLETON_FOR_CLASS(PSUpdateApp)
 
-@property (nonatomic) NSString *appID, *appStoreLocation, *appName, *route;
+@property (nonatomic) NSString *appID, *appStoreLocation, *appName, *route, *updatePageUrl;
 @property (nonatomic) UpdateStrategy strategy;
 @property (nonatomic) int daysUntilPrompt;
 @property (nonatomic) NSDate *remindDate;
 
-+ (id) startWithAppID:(NSString *)appId store:(NSString *)store;
++ (id) startWithRoute:(NSString *)route;
 + (id) startWithAppID:(NSString *)appId;
++ (id) startWithAppID:(NSString *)appId store:(NSString *)store;
+
 - (void) detectAppVersion:(PSUpdateAppCompletionBLock)completionBlock;
+- (void) setURLAdHoc:(NSString *)url;
 
 @end
