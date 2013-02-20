@@ -381,6 +381,7 @@
 				106B179C16D571FB005AE3DB /* es */,
 			);
 			name = InfoPlist.strings;
+			path = ../../PSUpdateApp/Localizations;
 			sourceTree = "<group>";
 		};
 		10E51F8116D2D32700520862 /* Localizable.strings */ = {
@@ -391,6 +392,7 @@
 				106B179B16D571FB005AE3DB /* es */,
 			);
 			name = Localizable.strings;
+			path = ../../PSUpdateApp/Localizations;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

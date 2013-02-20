@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '5.0'
   s.requires_arc = true
   
-  s.source_files = 'PSUpdateApp/PSUpdateApp'
+  s.source_files = 'PSUpdateApp/*.{h,m}'
+  s.resource = 'Localization/**'
 
   s.dependency 'AFNetworking','~>1.1.0'
 end
