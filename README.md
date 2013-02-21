@@ -140,9 +140,13 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 - It's localized
 - It has a simple BDD test inside the example project
 
-### Recognition:
+### Version
 
-Created by [Daniele Bogo](http://paperstreetsoapdesign.com)  
+1.0
+
+### Created by:
+
+[Daniele Bogo](http://paperstreetsoapdesign.com)  
 
 ### License
 The MIT License (MIT)

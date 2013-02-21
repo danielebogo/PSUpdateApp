@@ -68,7 +68,13 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
                                                                                                     completionBlock(nil, YES);
                                                                                                 } else if ( ![self isSkipVersion] ) {
                                                                                                     [self showAlert];
+                                                                                                } else {
+                                                                                                    if ( completionBlock )
+                                                                                                        completionBlock(nil, NO);
                                                                                                 }
+                                                                                            } else {
+                                                                                                if ( completionBlock )
+                                                                                                    completionBlock(nil, NO);
                                                                                             }
                                                                                         }
                                                                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {

@@ -124,8 +124,8 @@
 		10A2FCCD16D29862008C1FDB = {
 			isa = PBXGroup;
 			children = (
-				10A2FCF916D29B20008C1FDB /* Model */,
-				10A2FCDF16D29862008C1FDB /* PSUpdateApp */,
+				10A2FCF916D29B20008C1FDB /* PSUpdateApp */,
+				10A2FCDF16D29862008C1FDB /* Example */,
 				1056B26F16D3F7E90061FCF0 /* PSUpdateAppTests */,
 				10A2FCD816D29862008C1FDB /* Frameworks */,
 				10A2FCD716D29862008C1FDB /* Products */,
@@ -156,7 +156,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		10A2FCDF16D29862008C1FDB /* PSUpdateApp */ = {
+		10A2FCDF16D29862008C1FDB /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				10A2FCE816D29862008C1FDB /* PSAppDelegate.h */,
@@ -165,6 +165,7 @@
 				10A2FCF716D298F5008C1FDB /* MainViewController.m */,
 				10A2FCE016D29862008C1FDB /* Supporting Files */,
 			);
+			name = Example;
 			path = PSUpdateApp;
 			sourceTree = "<group>";
 		};
@@ -183,14 +184,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		10A2FCF916D29B20008C1FDB /* Model */ = {
+		10A2FCF916D29B20008C1FDB /* PSUpdateApp */ = {
 			isa = PBXGroup;
 			children = (
 				10A2FCFD16D29DDE008C1FDB /* CWLSynthesizeSingleton.h */,
 				10A2FCFA16D29BC3008C1FDB /* PSUpdateApp.h */,
 				10A2FCFB16D29BC3008C1FDB /* PSUpdateApp.m */,
 			);
-			name = Model;
 			path = PSUpdateApp;
 			sourceTree = "<group>";
 		};
