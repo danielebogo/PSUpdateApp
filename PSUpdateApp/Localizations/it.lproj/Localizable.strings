@@ -13,5 +13,5 @@
 "alert.success.remindme.text" = "È disponibile una nuova versione di %@. Vuoi aggiornare alla versione %@? Aggiorna ora o ricordamelo in seguito.";
 
 "alert.button.update" = "Aggiorna";
-"alert.button.skip" = "Salta questa versione";
+"alert.button.skip" = "Salta la versione";
 "alert.button.remindme" = "Non adesso. Ricordamelo";
