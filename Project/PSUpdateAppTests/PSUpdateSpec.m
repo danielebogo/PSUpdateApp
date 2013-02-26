@@ -18,7 +18,7 @@ describe(@"PSUpdateApp start:", ^{
         
         it(@"new version exist with block", ^{
             
-            [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success) {
+            [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success, id JSON) {
                 fetchedData = success;
             }];
             
@@ -27,7 +27,7 @@ describe(@"PSUpdateApp start:", ^{
         
         it(@"new version doesn't exist with block", ^{
             
-            [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success) {
+            [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success, id JSON) {
                 blockError = error;
             }];
             
@@ -47,7 +47,7 @@ describe(@"PSUpdateApp start:", ^{
         
         it(@"new version doesn't exist with block", ^{
             
-            [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success) {
+            [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success, id JSON) {
                 fetchedData = success;
             }];
             

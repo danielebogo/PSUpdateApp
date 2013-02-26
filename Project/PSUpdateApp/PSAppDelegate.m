@@ -83,8 +83,8 @@
     
 //--- DETECT VERSION WITH BLOCK
 //    You can use the completion block to implement you custom alert and actions
-//    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success) {
-//        NSLog(@"UPDATE");
+//    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success, id JSON) {
+//        NSLog(@"UPDATE: %@", JSON);
 //    }];
 }
 

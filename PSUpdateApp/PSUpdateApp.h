@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CWLSynthesizeSingleton.h"
 
-typedef void(^PSUpdateAppCompletionBLock)(NSError *error, BOOL success);
+typedef void(^PSUpdateAppCompletionBLock)(NSError *error, BOOL success, id JSON);
 
 typedef enum {
     DefaultStrategy = 0,

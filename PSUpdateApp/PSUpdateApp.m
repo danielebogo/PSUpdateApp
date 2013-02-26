@@ -65,21 +65,21 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
                                                                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                                                             if ( [self isNewVersion:JSON] ) {
                                                                                                 if ( completionBlock && ![self isSkipVersion] ) {
-                                                                                                    completionBlock(nil, YES);
+                                                                                                    completionBlock(nil, YES, JSON);
                                                                                                 } else if ( ![self isSkipVersion] ) {
                                                                                                     [self showAlert];
                                                                                                 } else {
                                                                                                     if ( completionBlock )
-                                                                                                        completionBlock(nil, NO);
+                                                                                                        completionBlock(nil, NO, JSON);
                                                                                                 }
                                                                                             } else {
                                                                                                 if ( completionBlock )
-                                                                                                    completionBlock(nil, NO);
+                                                                                                    completionBlock(nil, NO, JSON);
                                                                                             }
                                                                                         }
                                                                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                                                                                             if ( completionBlock && ![self isSkipVersion] )
-                                                                                                completionBlock(error, NO);
+                                                                                                completionBlock(error, NO, nil);
                                                                                         }];
     [operation start];
 }
