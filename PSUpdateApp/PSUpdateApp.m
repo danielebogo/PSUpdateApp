@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 D-Still. All rights reserved.
 //
 
+#ifndef PSUdateAppLocalizedStrings
+#define PSUdateAppLocalizedStrings(key) \
+NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
+#endif
+
 #import "PSUpdateApp.h"
 #import <AFNetworking/AFNetworking.h>
 
@@ -134,21 +139,21 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
         case DefaultStrategy:
         default:
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alert.success.title", nil)
-                                                                message:[NSString stringWithFormat:NSLocalizedString(@"alert.success.default.text", nil), self.appName, _newVersion]
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:PSUdateAppLocalizedStrings(@"alert.success.title")
+                                                                message:[NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.default.text"), self.appName, _newVersion]
                                                                delegate:self
-                                                      cancelButtonTitle:NSLocalizedString(@"alert.button.skip", nil)
-                                                      otherButtonTitles:NSLocalizedString(@"alert.button.update", nil), nil];
+                                                      cancelButtonTitle:PSUdateAppLocalizedStrings(@"alert.button.skip")
+                                                      otherButtonTitles:PSUdateAppLocalizedStrings(@"alert.button.update"), nil];
             [alertView show];
         }
             break;
             
         case ForceStrategy:
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alert.success.title", nil)
-                                                                message:[NSString stringWithFormat:NSLocalizedString(@"alert.success.force.text", nil), self.appName, _newVersion]
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:PSUdateAppLocalizedStrings(@"alert.success.title")
+                                                                message:[NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.force.text"), self.appName, _newVersion]
                                                                delegate:self
-                                                      cancelButtonTitle:NSLocalizedString(@"alert.button.update", nil)
+                                                      cancelButtonTitle:PSUdateAppLocalizedStrings(@"alert.button.update")
                                                       otherButtonTitles:nil, nil];
             [alertView show];
         }
@@ -156,11 +161,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
             
         case RemindStrategy:
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alert.success.title", nil)
-                                                                message:[NSString stringWithFormat:NSLocalizedString(@"alert.success.remindme.text", nil), _appName, _newVersion]
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:PSUdateAppLocalizedStrings(@"alert.success.title")
+                                                                message:[NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.remindme.text"), _appName, _newVersion]
                                                                delegate:self
-                                                      cancelButtonTitle:NSLocalizedString(@"alert.button.skip", nil)
-                                                      otherButtonTitles:NSLocalizedString(@"alert.button.update", nil), NSLocalizedString(@"alert.button.remindme", nil), nil];
+                                                      cancelButtonTitle:PSUdateAppLocalizedStrings(@"alert.button.skip")
+                                                      otherButtonTitles:PSUdateAppLocalizedStrings(@"alert.button.update"), PSUdateAppLocalizedStrings(@"alert.button.remindme"), nil];
             [alertView show];
         }
             break;
