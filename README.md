@@ -32,7 +32,7 @@ $ touch Podfile
 $ edit Podfile
 platform :ios, '5.0' 
 # Or platform :osx, '10.7'
-pod 'PSUpdateApp', '~> 1.0'
+pod 'PSUpdateApp', '~> 1.0.3'
 ```
 
 Install into your project:
@@ -124,8 +124,9 @@ If you want to use PSUpdateApp in a distribution ad hoc, or in an enterprise app
 {
   "results": [
     {
-      "version": "1.0",
-      "trackViewUrl": "http://paperstreetsoapdesign.com/apps/updateapp/update.html"
+      "version": "1.0.4",
+      "trackViewUrl": "http://paperstreetsoapdesign.com/apps/updateapp/update.html",
+      "type":"mandatory"
     }
   ]
 }
@@ -139,10 +140,11 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 - Use the PSUpdateApp properties to change the PSUpdateApp default value: for example the **app name** or **store location**
 - It's localized
 - It has a simple BDD test inside the example project
+- Into the custom JSON structure, it's a new field called "type", to set the PSUpdateStrategy from remote (DefaultStrategy or ForceStrategy).
 
 ### Version
 
-1.0
+1.0.3
 
 ### Created by:
 

@@ -9,7 +9,7 @@
 #import "PSAppDelegate.h"
 #import "MainViewController.h"
 
-#define FAKE_ROUTE @"http://paperstreetsoapdesign.com/apps/updateapp/fake.json"
+#define FAKE_ROUTE @"http://paperstreetsoapdesign.com/development/updateapp/fake.json"
 
 @implementation PSAppDelegate
 
@@ -23,7 +23,7 @@
     
 //--- DEFAULT MODE
 //    Start in default mode with your appID.
-    [PSUpdateApp startWithAppID:@"529119648"];
+//    [PSUpdateApp startWithAppID:@"529119648"];
 
 //--- CUSTOM LOCATION MODE
 //    Start with your appID and with the store location. The default mode set the store location by the device location.
@@ -32,11 +32,11 @@
   
 //--- CUSTOM URL MODE
 //    You can start with a custom url, if you want to detect the version about a ad hoc distribution app.
-//    [PSUpdateApp startWithRoute:FAKE_ROUTE];
+    [PSUpdateApp startWithRoute:FAKE_ROUTE];
     
 //--- ALERT STRATEGIES
 //    The strategies change the Alert buttons rappresentation
-//    The Default Strategy has 2 buttons: "Skip this version" ans "Update"
+//    The Default Strategy has 2 buttons: "Skip this version" and "Update"
 //    You can set your strategy with:
 //    DefaultStrategy   -> default mode
 //    ForceStrategy     -> force the update. The alert has only the update button

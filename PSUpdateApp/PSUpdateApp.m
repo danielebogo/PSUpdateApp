@@ -47,7 +47,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
     self = [super init];
     
     if ( self ) {
-        [self setAppName:[[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey]];
+        [self setAppName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]];
         [self setStrategy:DefaultStrategy];
         [self setAppID:appId];
         [self setAppStoreLocation: store ? store : [[NSLocale currentLocale] objectForKey: NSLocaleCountryCode]];
@@ -106,6 +106,10 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
     if ( [[dictionary objectForKey:@"results"] count] > 0 ) {
         _newVersion = [[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"version"];
         [self setUpdatePageUrl:[[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"trackViewUrl"]];
+        
+        if ([[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"type"]) {
+            [self setStrategy: [[[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"type"] isEqualToString:@"mandatory"] ? ForceStrategy : DefaultStrategy];
+        }
         
         return [kCurrentAppVersion compare:_newVersion options:NSNumericSearch] == NSOrderedAscending;
     }
