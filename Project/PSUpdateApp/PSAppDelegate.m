@@ -23,7 +23,7 @@
     
 //--- DEFAULT MODE
 //    Start in default mode with your appID.
-//    [PSUpdateApp startWithAppID:@"529119648"];
+    [PSUpdateApp startWithAppID:@"529119648"];
 
 //--- CUSTOM LOCATION MODE
 //    Start with your appID and with the store location. The default mode set the store location by the device location.
@@ -32,7 +32,7 @@
   
 //--- CUSTOM URL MODE
 //    You can start with a custom url, if you want to detect the version about a ad hoc distribution app.
-    [PSUpdateApp startWithRoute:FAKE_ROUTE];
+//    [PSUpdateApp startWithRoute:FAKE_ROUTE];
     
 //--- ALERT STRATEGIES
 //    The strategies change the Alert buttons rappresentation
