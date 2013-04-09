@@ -150,8 +150,8 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 [Daniele Bogo](http://paperstreetsoapdesign.com)  
 
-##Credits
-- Arabic Localization [Ehab Abdou](https://github.com/XemaCobra)
+### Credits
+- Arabic Localization by [Ehab Abdou](https://github.com/XemaCobra)
 
 ### License
 The MIT License (MIT)
