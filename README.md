@@ -124,7 +124,7 @@ If you want to use PSUpdateApp in a distribution ad hoc, or in an enterprise app
 {
   "results": [
     {
-      "version": "1.0.4",
+      "version": "1.0.5",
       "trackViewUrl": "http://paperstreetsoapdesign.com/apps/updateapp/update.html",
       "type":"mandatory"
     }
@@ -144,7 +144,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Version
 
-1.0.4
+1.0.5
 
 ### Created by:
 
@@ -152,6 +152,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Credits
 - Arabic Localization by [Ehab Abdou](https://github.com/XemaCobra)
+- Korean Localization by [Sean Moon](https://github.com/seanmoon)
 
 ### License
 The MIT License (MIT)
