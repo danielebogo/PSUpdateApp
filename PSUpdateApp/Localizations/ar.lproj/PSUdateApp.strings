@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  PSUpdateApp
+
+  Created by Ehab Abdou on 09/04/13.
+  Copyright (c) 2013 D-Still. All rights reserved.
+*/
+
+"alert.success.title" = "تحديث متوفر";
+
+"alert.success.default.text" = "تحديث جديد متوفر من تطبيق %@. هل تريد الترقية إلى النسخة %@ الآن؟";
+"alert.success.force.text" = "تحديث جديد متوفر من تطبيق %@. أرجو الترقية إلى النسخة %@.";
+"alert.success.remindme.text" = "تحديث جديد متوفر من تطبيق %@. هل تريد الترقية إلى النسخة %@؟ الترقية الآن أو ذكرني لاحقاً.";
+
+"alert.button.update" = "االترقية الآن";
+"alert.button.skip" = "تخطي هذه النسخة";
+"alert.button.remindme" = "ذكرني لاحقاً";
