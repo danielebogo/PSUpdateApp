@@ -144,11 +144,14 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Version
 
-1.0.3
+1.0.4
 
 ### Created by:
 
 [Daniele Bogo](http://paperstreetsoapdesign.com)  
+
+##Credits
+- Arabic Localization [Ehab Abdou](https://github.com/XemaCobra)
 
 ### License
 The MIT License (MIT)
