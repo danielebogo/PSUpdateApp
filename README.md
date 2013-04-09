@@ -142,6 +142,13 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 - It has a simple BDD test inside the example project
 - Into the custom JSON structure, it's a new field called "type", to set the PSUpdateStrategy from remote (DefaultStrategy or ForceStrategy).
 
+### Localizations
+- English
+- Italian
+- Spanish
+- Arabic
+- Korean
+
 ### Version
 
 1.0.5
