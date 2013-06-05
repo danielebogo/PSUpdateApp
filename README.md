@@ -32,7 +32,7 @@ $ touch Podfile
 $ edit Podfile
 platform :ios, '5.0' 
 # Or platform :osx, '10.7'
-pod 'PSUpdateApp', '~> 1.0.3'
+pod 'PSUpdateApp', '~> 1.0.6'
 ```
 
 Install into your project:
@@ -124,7 +124,7 @@ If you want to use PSUpdateApp in a distribution ad hoc, or in an enterprise app
 {
   "results": [
     {
-      "version": "1.0.5",
+      "version": "1.0.6",
       "trackViewUrl": "http://paperstreetsoapdesign.com/apps/updateapp/update.html",
       "type":"mandatory"
     }
@@ -151,7 +151,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Version
 
-1.0.5
+1.0.6
 
 ### Created by:
 
