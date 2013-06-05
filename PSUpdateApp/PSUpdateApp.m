@@ -58,7 +58,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
     return self;
 }
 
-- (void) detectAppVersion:(PSUpdateAppCompletionBLock)completionBlock
+- (void) detectAppVersion:(PSUpdateAppCompletionBlock)completionBlock
 {   
     if ( _strategy == RemindStrategy && [self remindDate] != nil && ![self checkConsecutiveDays] )
         return;

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CWLSynthesizeSingleton.h"
 
-typedef void(^PSUpdateAppCompletionBLock)(NSError *error, BOOL success, id JSON);
+typedef void(^PSUpdateAppCompletionBlock)(NSError *error, BOOL success, id JSON);
 
 typedef enum {
     DefaultStrategy = 0,
@@ -30,7 +30,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS(PSUpdateApp)
 + (id) startWithAppID:(NSString *)appId;
 + (id) startWithAppID:(NSString *)appId store:(NSString *)store;
 
-- (void) detectAppVersion:(PSUpdateAppCompletionBLock)completionBlock;
+- (void) detectAppVersion:(PSUpdateAppCompletionBlock)completionBlock;
 - (void) setURLAdHoc:(NSString *)url;
 
 @end
