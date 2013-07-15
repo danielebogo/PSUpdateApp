@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  PSUpdateApp
+
+  Created by iBo on 18/02/13.
+  Copyright (c) 2013 D-Still. All rights reserved.
+*/
+
+"alert.success.title" = "有可用的新版本";
+
+"alert.success.default.text" = "有可用的新版本 %@。 你想现在升级到最新版吗？";
+"alert.success.force.text" = "有可用的新版本 %@。 请升级到最新版。";
+"alert.success.remindme.text" = "有可用的新版本 %@。 你想现在升级到最新版吗？现在马上升级还是稍后再提醒？";
+
+"alert.button.update" = "马上升级";
+"alert.button.skip" = "跳过此次更新";
+"alert.button.remindme" = "稍后再提醒我";

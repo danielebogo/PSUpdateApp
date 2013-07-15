@@ -72,6 +72,9 @@
 		10A2FCFD16D29DDE008C1FDB /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWLSynthesizeSingleton.h; path = ../../PSUpdateApp/CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
 		10E51F8016D2D32700520862 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PSUdateApp.strings; sourceTree = "<group>"; };
 		4F666679D6D54465B91878A9 /* libPods-PSUpdateAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PSUpdateAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ACC48EC17939FA100E3C39D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PSUdateApp.strings"; sourceTree = "<group>"; };
+		8ACC48ED17939FA200E3C39D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		8ACC48EE17939FA200E3C39D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		DD6B5C985D3E4316A8B7B6D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		E9277A6250104A848C749908 /* Pods-PSUpdateAppTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSUpdateAppTests.xcconfig"; path = "Pods/Pods-PSUpdateAppTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -253,6 +256,7 @@
 				en,
 				it,
 				es,
+				"zh-Hans",
 			);
 			mainGroup = 10A2FCCD16D29862008C1FDB;
 			productRefGroup = 10A2FCD716D29862008C1FDB /* Products */;
@@ -369,6 +373,7 @@
 				1056B27316D3F7E90061FCF0 /* en */,
 				106B179A16D56F29005AE3DB /* it */,
 				106B179D16D571FB005AE3DB /* es */,
+				8ACC48EE17939FA200E3C39D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				10A2FCE316D29862008C1FDB /* en */,
 				106B179916D56F29005AE3DB /* it */,
 				106B179C16D571FB005AE3DB /* es */,
+				8ACC48ED17939FA200E3C39D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			path = ../../PSUpdateApp/Localizations;
@@ -390,6 +396,7 @@
 				10E51F8016D2D32700520862 /* en */,
 				106B179816D56F29005AE3DB /* it */,
 				106B179B16D571FB005AE3DB /* es */,
+				8ACC48EC17939FA100E3C39D /* zh-Hans */,
 			);
 			name = PSUdateApp.strings;
 			path = ../../PSUpdateApp/Localizations;
