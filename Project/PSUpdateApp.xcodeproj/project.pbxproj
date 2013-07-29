@@ -58,7 +58,7 @@
 		10A2FCDD16D29862008C1FDB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		10A2FCE116D29862008C1FDB /* PSUpdateApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PSUpdateApp-Info.plist"; sourceTree = "<group>"; };
 		10A2FCE316D29862008C1FDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		10A2FCE516D29862008C1FDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		10A2FCE516D29862008C1FDB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		10A2FCE716D29862008C1FDB /* PSUpdateApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PSUpdateApp-Prefix.pch"; sourceTree = "<group>"; };
 		10A2FCE816D29862008C1FDB /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
 		10A2FCE916D29862008C1FDB /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +75,12 @@
 		8ACC48EC17939FA100E3C39D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PSUdateApp.strings"; sourceTree = "<group>"; };
 		8ACC48ED17939FA200E3C39D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8ACC48EE17939FA200E3C39D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		9A109AEC17A65C900034C4D0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/PSUdateApp.strings; sourceTree = "<group>"; };
+		9A109AED17A65CA40034C4D0 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PSUdateApp.strings; sourceTree = "<group>"; };
+		9A109AEE17A65CB30034C4D0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/PSUdateApp.strings; sourceTree = "<group>"; };
+		9A109AEF17A65CBC0034C4D0 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9A109AF017A65CC70034C4D0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9A109AF117A65CD20034C4D0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DD6B5C985D3E4316A8B7B6D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		E9277A6250104A848C749908 /* Pods-PSUpdateAppTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSUpdateAppTests.xcconfig"; path = "Pods/Pods-PSUpdateAppTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -257,6 +263,9 @@
 				it,
 				es,
 				"zh-Hans",
+				ru,
+				ar,
+				ko,
 			);
 			mainGroup = 10A2FCCD16D29862008C1FDB;
 			productRefGroup = 10A2FCD716D29862008C1FDB /* Products */;
@@ -385,6 +394,9 @@
 				106B179916D56F29005AE3DB /* it */,
 				106B179C16D571FB005AE3DB /* es */,
 				8ACC48ED17939FA200E3C39D /* zh-Hans */,
+				9A109AEF17A65CBC0034C4D0 /* ar */,
+				9A109AF017A65CC70034C4D0 /* ko */,
+				9A109AF117A65CD20034C4D0 /* ru */,
 			);
 			name = InfoPlist.strings;
 			path = ../../PSUpdateApp/Localizations;
@@ -397,6 +409,9 @@
 				106B179816D56F29005AE3DB /* it */,
 				106B179B16D571FB005AE3DB /* es */,
 				8ACC48EC17939FA100E3C39D /* zh-Hans */,
+				9A109AEC17A65C900034C4D0 /* ru */,
+				9A109AED17A65CA40034C4D0 /* ar */,
+				9A109AEE17A65CB30034C4D0 /* ko */,
 			);
 			name = PSUdateApp.strings;
 			path = ../../PSUpdateApp/Localizations;

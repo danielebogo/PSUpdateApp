@@ -32,7 +32,7 @@ $ touch Podfile
 $ edit Podfile
 platform :ios, '5.0' 
 # Or platform :osx, '10.7'
-pod 'PSUpdateApp', '~> 1.0.7'
+pod 'PSUpdateApp', '~> 1.0.8'
 ```
 
 Install into your project:
@@ -124,7 +124,7 @@ If you want to use PSUpdateApp in a distribution ad hoc, or in an enterprise app
 {
   "results": [
     {
-      "version": "1.0.7",
+      "version": "1.0.8",
       "trackViewUrl": "http://paperstreetsoapdesign.com/development/updateapp/update.html",
       "type":"mandatory"
     }
@@ -148,10 +148,12 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 - Spanish
 - Arabic
 - Korean
+- Chinese
+- Russian
 
 ### Version
 
-1.0.7
+1.0.8
 
 ### Created by:
 
@@ -161,6 +163,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 - Arabic Localization by [Ehab Abdou](https://github.com/XemaCobra)
 - Korean Localization by [Sean Moon](https://github.com/seanmoon)
 - Chinese Localization by [Sean Wang](https://github.com/Sean-Wang)
+- Russian Localization by [Mixdesign](https://github.com/mixdesign)
 
 ### License
 The MIT License (MIT)
