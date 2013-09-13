@@ -67,9 +67,9 @@
 		10A2FCEF16D29862008C1FDB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		10A2FCF616D298F5008C1FDB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		10A2FCF716D298F5008C1FDB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		10A2FCFA16D29BC3008C1FDB /* PSUpdateApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSUpdateApp.h; path = ../../PSUpdateApp/PSUpdateApp.h; sourceTree = "<group>"; };
-		10A2FCFB16D29BC3008C1FDB /* PSUpdateApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSUpdateApp.m; path = ../../PSUpdateApp/PSUpdateApp.m; sourceTree = "<group>"; };
-		10A2FCFD16D29DDE008C1FDB /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWLSynthesizeSingleton.h; path = ../../PSUpdateApp/CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
+		10A2FCFA16D29BC3008C1FDB /* PSUpdateApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSUpdateApp.h; path = ../../../PSUpdateApp/PSUpdateApp.h; sourceTree = "<group>"; };
+		10A2FCFB16D29BC3008C1FDB /* PSUpdateApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSUpdateApp.m; path = ../../../PSUpdateApp/PSUpdateApp.m; sourceTree = "<group>"; };
+		10A2FCFD16D29DDE008C1FDB /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWLSynthesizeSingleton.h; path = ../../../PSUpdateApp/CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
 		10E51F8016D2D32700520862 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PSUdateApp.strings; sourceTree = "<group>"; };
 		4F666679D6D54465B91878A9 /* libPods-PSUpdateAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PSUpdateAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ACC48EC17939FA100E3C39D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PSUdateApp.strings"; sourceTree = "<group>"; };
@@ -399,7 +399,7 @@
 				9A109AF117A65CD20034C4D0 /* ru */,
 			);
 			name = InfoPlist.strings;
-			path = ../../PSUpdateApp/Localizations;
+			path = ../../../PSUpdateApp/Localizations;
 			sourceTree = "<group>";
 		};
 		10E51F8116D2D32700520862 /* PSUdateApp.strings */ = {
@@ -414,7 +414,7 @@
 				9A109AEE17A65CB30034C4D0 /* ko */,
 			);
 			name = PSUdateApp.strings;
-			path = ../../PSUpdateApp/Localizations;
+			path = ../../../PSUpdateApp/Localizations;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -521,6 +521,8 @@
 				INFOPLIST_FILE = "PSUpdateApp/PSUpdateApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -534,6 +536,8 @@
 				INFOPLIST_FILE = "PSUpdateApp/PSUpdateApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
