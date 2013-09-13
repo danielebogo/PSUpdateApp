@@ -1,10 +1,10 @@
 PSUpdateApp
 ===========
 
-## A simple method to notify users that a new version of your iOS app is available.
-
 ## PSUpdateApp Version 2.0 is available!!!
 The new version 2.0 is based on **[AFNetworking](https://github.com/AFNetworking/AFNetworking/ "AFNetworking")** framework 2.0 RC2, only for **iOS 7**.
+
+## A simple method to notify users that a new version of your iOS app is available.
 
 ### About
 **PSUpdateApp** notifies you if a new version of your iOS application is available in the AppStore or in any other place.<br />
@@ -52,7 +52,7 @@ $ open MyProject.xcworkspace
 
 #### via Download
 
-[Download PSUpdateApp](https://github.com/danielebogo/PSUpdateApp/archive/master.zip) or play with the [example project](https://github.com/danielebogo/PSUpdateApp/tree/master/Project). Open **PSUpdateApp.xcworkspace** (CocoaPods need).
+[Download PSUpdateApp](https://github.com/danielebogo/PSUpdateApp/archive/master.zip) or play with the [example project](https://github.com/danielebogo/PSUpdateApp/tree/master/Projects). Open **PSUpdateApp.xcworkspace** (CocoaPods need).
 
 ## Integration
 
