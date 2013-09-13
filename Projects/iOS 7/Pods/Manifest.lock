@@ -1,0 +1,21 @@
+PODS:
+  - AFNetworking (2.0.0-RC2):
+    - AFNetworking/Core
+    - AFNetworking/UIKit+AFNetworking
+  - AFNetworking/Core (2.0.0-RC2)
+  - AFNetworking/UIKit+AFNetworking (2.0.0-RC2)
+  - Kiwi (2.2.1):
+    - Kiwi/ARC
+    - Kiwi/NonARC
+  - Kiwi/ARC (2.2.1)
+  - Kiwi/NonARC (2.2.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.0.0-RC2)
+  - Kiwi (= 2.2.1)
+
+SPEC CHECKSUMS:
+  AFNetworking: 6b19d8a0793f342d8c879cd0af9d7488e54addcf
+  Kiwi: e6524ba0eaa1b28af7af146bdee5314b32aa3edb
+
+COCOAPODS: 0.24.0
