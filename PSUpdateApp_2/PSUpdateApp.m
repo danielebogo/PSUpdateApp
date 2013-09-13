@@ -12,6 +12,7 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
 #endif
 
 #import "PSUpdateApp.h"
+
 #import <AFNetworking/AFNetworking.h>
 
 #define APPLE_URL @"http://itunes.apple.com/lookup?"
@@ -63,30 +64,27 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
     if ( _strategy == RemindStrategy && [self remindDate] != nil && ![self checkConsecutiveDays] )
         return;
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[self setJsonURL]]];
-    [request setHTTPMethod:@"GET"];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
-                                                                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                                                            if ( [self isNewVersion:JSON] ) {
-                                                                                                if ( completionBlock && ![self isSkipVersion] ) {
-                                                                                                    completionBlock(nil, YES, JSON);
-                                                                                                } else if ( ![self isSkipVersion] ) {
-                                                                                                    [self showAlert];
-                                                                                                } else {
-                                                                                                    if ( completionBlock )
-                                                                                                        completionBlock(nil, NO, JSON);
-                                                                                                }
-                                                                                            } else {
-                                                                                                if ( completionBlock )
-                                                                                                    completionBlock(nil, NO, JSON);
-                                                                                            }
-                                                                                        }
-                                                                                        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                                                            if ( completionBlock && ![self isSkipVersion] )
-                                                                                                completionBlock(error, NO, nil);
-                                                                                        }];
-    [operation start];
+    [[AFHTTPClient client] GET:[self setJsonURL]
+                    parameters:nil
+                       success:^(NSHTTPURLResponse *response, id responseObject) {
+                           if ( [self isNewVersion:responseObject] ) {
+                               if ( completionBlock && ![self isSkipVersion] )
+                                   completionBlock(nil, YES, responseObject);
+                               else if ( ![self isSkipVersion] )
+                                   [self showAlert];
+                               else {
+                                   if ( completionBlock )
+                                       completionBlock(nil, NO, responseObject);
+                               }
+                           } else {
+                               if ( completionBlock )
+                                   completionBlock(nil, NO, responseObject);
+                           }
+                       }
+                       failure:^(NSError *error) {
+                           if ( completionBlock && ![self isSkipVersion] )
+                               completionBlock(error, NO, nil);
+                       }];
 }
 
 - (NSString *) setJsonURL

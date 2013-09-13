@@ -3,6 +3,9 @@ PSUpdateApp
 
 ## A simple method to notify users that a new version of your iOS app is available.
 
+## PSUpdateApp Version 2.0 is available!!!
+The new version 2.0 is based on **[AFNetworking](https://github.com/AFNetworking/AFNetworking/ "AFNetworking")** framework 2.0 RC2, only for **iOS 7**.
+
 ### About
 **PSUpdateApp** notifies you if a new version of your iOS application is available in the AppStore or in any other place.<br />
 If a new version is available, PSUpdateApp presents an UIAlertView, that informs you of the newer version, and gives you the option to update the application.<br />
