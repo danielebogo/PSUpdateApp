@@ -1,0 +1,1 @@
+../../AFNetworking/AFNetworking/AFJSONPatchSerializer.h

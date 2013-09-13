@@ -1,0 +1,17 @@
+/*
+ Localizable.strings
+ PSUpdateApp
+ 
+ Created by iBo on 18/02/13.
+ Copyright (c) 2013 D-Still. All rights reserved.
+ */
+
+"alert.success.title" = "업데이트 안내";
+
+"alert.success.default.text" = "%@ %@가 등록되었습니다. 지금 업데이트 하세요.";
+"alert.success.force.text" = "%@ %@가 등록되었습니다. 지금 업데이트 하세요";
+"alert.success.remindme.text" = "%@ %@가 등록되었습니다. 지금 업데이트 하세요.";
+
+"alert.button.update" = "업데이트";
+"alert.button.skip" = "이 버전 안 함";
+"alert.button.remindme" = "나중에 알림";

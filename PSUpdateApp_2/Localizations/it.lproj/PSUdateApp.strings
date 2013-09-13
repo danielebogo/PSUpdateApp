@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  PSUpdateApp
+
+  Created by iBo on 18/02/13.
+  Copyright (c) 2013 D-Still. All rights reserved.
+*/
+
+"alert.success.title" = "Aggiornamento disponibile";
+
+"alert.success.default.text" = "È disponibile una nuova versione di %@. Vuoi aggiornare alla versione %@ adesso?";
+"alert.success.force.text" = "È disponibile una nuova versione di %@. Aggiorna alla versione %@ per continuare.";
+"alert.success.remindme.text" = "È disponibile una nuova versione di %@. Vuoi aggiornare alla versione %@? Aggiorna ora o ricordamelo in seguito.";
+
+"alert.button.update" = "Aggiorna";
+"alert.button.skip" = "Salta la versione";
+"alert.button.remindme" = "Non adesso. Ricordamelo";
