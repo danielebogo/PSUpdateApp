@@ -166,7 +166,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 - Arabic Localization by [Ehab Abdou](https://github.com/XemaCobra)
 - Korean Localization by [Sean Moon](https://github.com/seanmoon)
 - Chinese Localization by [Sean Wang](https://github.com/Sean-Wang)
-- Russian Localization by [Mixdesign](https://github.com/mixdesign)
+- Russian Localization by [Almas Adilbek](https://github.com/mixdesign)
 
 ### License
 The MIT License (MIT)
