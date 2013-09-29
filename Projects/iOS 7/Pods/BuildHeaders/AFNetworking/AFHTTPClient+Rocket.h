@@ -1,1 +1,0 @@
-../../AFNetworking/AFNetworking/AFHTTPClient+Rocket.h

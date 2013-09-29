@@ -13,11 +13,18 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
 
 #import "PSUpdateApp.h"
 
-#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import <AFNetworking/AFURLResponseSerialization.h>
 
 #define APPLE_URL @"http://itunes.apple.com/lookup?"
 
 #define kCurrentAppVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+
+#ifdef DEBUG
+#define DebugLog(...) NSLog(__VA_ARGS__)
+#else
+#define DebugLog(...) { }
+#endif
 
 @interface PSUpdateApp () <UIAlertViewDelegate> {
     NSString *_newVersion;
@@ -64,27 +71,30 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
     if ( _strategy == RemindStrategy && [self remindDate] != nil && ![self checkConsecutiveDays] )
         return;
     
-    [[AFHTTPClient client] GET:[self setJsonURL]
-                    parameters:nil
-                       success:^(NSHTTPURLResponse *response, id responseObject) {
-                           if ( [self isNewVersion:responseObject] ) {
-                               if ( completionBlock && ![self isSkipVersion] )
-                                   completionBlock(nil, YES, responseObject);
-                               else if ( ![self isSkipVersion] )
-                                   [self showAlert];
-                               else {
-                                   if ( completionBlock )
-                                       completionBlock(nil, NO, responseObject);
-                               }
-                           } else {
-                               if ( completionBlock )
-                                   completionBlock(nil, NO, responseObject);
-                           }
-                       }
-                       failure:^(NSError *error) {
-                           if ( completionBlock && ![self isSkipVersion] )
-                               completionBlock(error, NO, nil);
-                       }];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager GET:[self setJsonURL] parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             DebugLog(@"JSON response: %@", responseObject);
+             
+             if ( [self isNewVersion:responseObject] ) {
+                 if ( completionBlock && ![self isSkipVersion] )
+                     completionBlock(nil, YES, responseObject);
+                 else if ( ![self isSkipVersion] )
+                     [self showAlert];
+                 else {
+                     if ( completionBlock )
+                         completionBlock(nil, NO, responseObject);
+                 }
+             } else {
+                 if ( completionBlock )
+                     completionBlock(nil, NO, responseObject);
+             }
+         }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             if ( completionBlock && ![self isSkipVersion] )
+                 completionBlock(error, NO, nil);
+         }];
 }
 
 - (NSString *) setJsonURL

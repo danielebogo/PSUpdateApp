@@ -2,7 +2,9 @@ PSUpdateApp
 ===========
 
 ## PSUpdateApp Version 2.0 is available!!!
-The new version 2.0 is based on **[AFNetworking](https://github.com/AFNetworking/AFNetworking/ "AFNetworking")** framework 2.0 RC2, only for **iOS 7**.
+The new version 2.0 is based on **[AFNetworking](https://github.com/AFNetworking/AFNetworking/ "AFNetworking")** framework 2.0. AFNetworking 2.0 officially supports iOS 6+, Mac OS X 10.8+, and Xcode 5.
+
+**If you'd like to use PSUpdateApp in a project targeting a base SDK of iOS 5, or Mac OS X 10.7, use the latest tagged 1.x release**.
 
 ## A simple method to notify users that a new version of your iOS app is available.
 
@@ -33,9 +35,9 @@ Change to the directory of your Xcode project, and Create and Edit your Podfile 
 $ cd /path/to/MyProject
 $ touch Podfile
 $ edit Podfile
-platform :ios, '5.0' 
-# Or platform :osx, '10.7'
-pod 'PSUpdateApp', '~> 1.0.9'
+platform :ios, '6.0' 
+# Or platform :osx, '10.8'
+pod 'PSUpdateApp', '~> 2.0.1'
 ```
 
 Install into your project:
@@ -127,7 +129,7 @@ If you want to use PSUpdateApp in a distribution ad hoc, or in an enterprise app
 {
   "results": [
     {
-      "version": "1.0.9",
+      "version": "3.0",
       "trackViewUrl": "http://paperstreetsoapdesign.com/development/updateapp/update.html",
       "type":"mandatory"
     }
@@ -139,7 +141,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Notes
 
-- This project requires ARC and iOS target from 5.0
+- This project requires ARC and iOS target from 6.0
 - Use the PSUpdateApp properties to change the PSUpdateApp default value: for example the **app name** or **store location**
 - It's localized
 - It has a simple BDD test inside the example project
@@ -156,7 +158,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Version
 
-1.0.9
+2.0.1
 
 ### Created by:
 
