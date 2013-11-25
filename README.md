@@ -73,7 +73,7 @@ PSUpdateApp has a simple integration:
     
 //--- DEFAULT MODE
 //    Start in default mode with your appID.
-    [PSUpdateApp manager startWithAppID:@"454638411"];
+    [[PSUpdateApp manager] startWithAppID:@"454638411"];
 
 //--- CUSTOM LOCATION MODE
 //    Start with your appID and with the store location. The default mode set the store location by the device location.
