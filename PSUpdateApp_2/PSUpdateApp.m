@@ -33,37 +33,40 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
 
 @implementation PSUpdateApp
 
-CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
-
-+ (id) startWithRoute:(NSString *)route
++ (PSUpdateApp *) manager
 {
-    return [[self alloc] initWithAppID:nil store:nil route:route];
-}
-
-+ (id) startWithAppID:(NSString *)appId store:(NSString *)store
-{
-    return [[self alloc] initWithAppID:appId store:store route:nil];
-}
-
-+ (id) startWithAppID:(NSString *)appId
-{
-    return [[self alloc] initWithAppID:appId store:nil route:nil];
-}
-
-- (id) initWithAppID:(NSString *)appId store:(NSString *)store route:(NSString *)route
-{
-    self = [super init];
+    static PSUpdateApp *sharedInstance = nil;
+    static dispatch_once_t oncePredicate;
     
-    if ( self ) {
-        [self setAppName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]];
-        [self setStrategy:DefaultStrategy];
-        [self setAppID:appId];
-        [self setAppStoreLocation: store ? store : [[NSLocale currentLocale] objectForKey: NSLocaleCountryCode]];
-        [self setDaysUntilPrompt:2];
-        [self setRoute:route];
-    }
-    
-    return self;
+    dispatch_once(&oncePredicate, ^{
+        sharedInstance = [[PSUpdateApp alloc] init];
+    });
+    return sharedInstance;
+}
+
+- (void) startWithRoute:(NSString *)route
+{
+    [self initWithAppID:nil store:nil route:route];
+}
+
+- (void) startWithAppID:(NSString *)appId store:(NSString *)store
+{
+    [self initWithAppID:appId store:store route:nil];
+}
+
+- (void) startWithAppID:(NSString *)appId
+{
+    [self initWithAppID:appId store:nil route:nil];
+}
+
+- (void) initWithAppID:(NSString *)appId store:(NSString *)store route:(NSString *)route
+{
+    [self setAppName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]];
+    [self setStrategy:DefaultStrategy];
+    [self setAppID:appId];
+    [self setAppStoreLocation: store ? store : [[NSLocale currentLocale] objectForKey: NSLocaleCountryCode]];
+    [self setDaysUntilPrompt:2];
+    [self setRoute:route];
 }
 
 - (void) detectAppVersion:(PSUpdateAppCompletionBlock)completionBlock
@@ -212,11 +215,10 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(PSUpdateApp)
             if ( buttonIndex == 0 ) {
                 [[NSUserDefaults standardUserDefaults] setObject:_newVersion forKey:@"skipVersion"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-            } else if ( buttonIndex == 1 ) {
+            } else if ( buttonIndex == 1 )
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.updatePageUrl]];
-            } else {
+            else
                 [self setRemindDate:[NSDate date]];
-            }
         }
 
             break;

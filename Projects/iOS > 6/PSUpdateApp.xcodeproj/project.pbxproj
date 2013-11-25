@@ -57,7 +57,6 @@
 		9AA29EBA17E3B10A0084EB40 /* PSUpdateAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PSUpdateAppTests-Info.plist"; sourceTree = "<group>"; };
 		9AA29EBC17E3B10A0084EB40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9AA29EBE17E3B10A0084EB40 /* PSUpdateAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSUpdateAppTests.m; sourceTree = "<group>"; };
-		9AA29EC917E3B41C0084EB40 /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
 		9AA29ECC17E3B41C0084EB40 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9AA29ECE17E3B41C0084EB40 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PSUdateApp.strings; sourceTree = "<group>"; };
 		9AA29ECF17E3B41C0084EB40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -187,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				9AA29ECA17E3B41C0084EB40 /* Localizations */,
-				9AA29EC917E3B41C0084EB40 /* CWLSynthesizeSingleton.h */,
 				9AA29EDB17E3B41C0084EB40 /* PSUpdateApp.h */,
 				9AA29EDC17E3B41C0084EB40 /* PSUpdateApp.m */,
 			);

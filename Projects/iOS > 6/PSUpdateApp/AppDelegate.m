@@ -25,17 +25,17 @@
     
 //--- DEFAULT MODE
 //    Start in default mode with your appID.
-    [PSUpdateApp startWithAppID:@"454638411"];
+    [[PSUpdateApp manager] startWithAppID:@"454638411"];
     
     
 //--- CUSTOM LOCATION MODE
 //    Start with your appID and with the store location. The default mode set the store location by the device location.
 //    More information about the store code here: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-//    [PSUpdateApp startWithAppID:@"529119648" store:@"US"];
+//    [[PSUpdateApp manager] startWithAppID:@"454638411" store:@"US"];
 
 //--- CUSTOM URL MODE
 //    You can start with a custom url, if you want to detect the version about a ad hoc distribution app.
-//    [PSUpdateApp startWithRoute:FAKE_ROUTE];
+//    [[PSUpdateApp manager] startWithRoute:FAKE_ROUTE];
 
 //--- ALERT STRATEGIES
 //    The strategies change the Alert buttons rappresentation
@@ -46,11 +46,11 @@
 //    RemindStrategy    -> Add the remind me button.
 //
 //    You can set the strategy with:
-//    [[PSUpdateApp sharedPSUpdateApp] setStrategy:RemindStrategy];
+//    [[PSUpdateApp manager] setStrategy:RemindStrategy];
 //
 //    With RemindStrategy the alert will appear after 2 days (2 is the default value) from the remind action.
 //    If you want you can set the days until promt with:
-//    [[PSUpdateApp sharedPSUpdateApp] setDaysUntilPrompt:10];
+//    [[PSUpdateApp manager] setDaysUntilPrompt:10];
 
 
 
@@ -82,11 +82,11 @@
     
 //--- DETECT VERSION
 //    Start to detect the version. In this case the block is nil, and the component use the default alert
-    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:nil];
+    [[PSUpdateApp manager] detectAppVersion:nil];
     
 //--- DETECT VERSION WITH BLOCK
 //    You can use the completion block to implement you custom alert and actions
-//    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success, id JSON) {
+//    [[PSUpdateApp manager] detectAppVersion:^(NSError *error, BOOL success, id JSON) {
 //        NSLog(@"UPDATE: %@", JSON);
 //    }];
 }
