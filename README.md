@@ -73,16 +73,16 @@ PSUpdateApp has a simple integration:
     
 //--- DEFAULT MODE
 //    Start in default mode with your appID.
-    [PSUpdateApp manager startWithAppID:@"454638411"];
+    [[PSUpdateApp manager] startWithAppID:@"454638411"];
 
 //--- CUSTOM LOCATION MODE
 //    Start with your appID and with the store location. The default mode set the store location by the device location.
 //    More information about the store code here: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-//    [PSUpdateApp manager startWithAppID:@"454638411" store:@"US"];
+//    [[PSUpdateApp manager] startWithAppID:@"454638411" store:@"US"];
   
 //--- CUSTOM URL MODE
 //    You can start with a custom url, if you want to detect the version about a ad hoc distribution app.
-//    [PSUpdateApp manager startWithRoute:FAKE_ROUTE];
+//    [[PSUpdateApp manager] startWithRoute:FAKE_ROUTE];
     
 //--- ALERT STRATEGIES
 //    The strategies change the Alert buttons rappresentation
@@ -167,7 +167,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 - Arabic Localization by [Ehab Abdou](https://github.com/XemaCobra)
 - Korean Localization by [Sean Moon](https://github.com/seanmoon)
 - Chinese Localization by [Sean Wang](https://github.com/Sean-Wang)
-- Russian Localization by [Mixdesign](https://github.com/mixdesign)
+- Russian Localization by [Almas Adilbek](https://github.com/mixdesign)
 
 ### License
 The MIT License (MIT)
