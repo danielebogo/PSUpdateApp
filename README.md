@@ -78,11 +78,11 @@ PSUpdateApp has a simple integration:
 //--- CUSTOM LOCATION MODE
 //    Start with your appID and with the store location. The default mode set the store location by the device location.
 //    More information about the store code here: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-//    [PSUpdateApp manager startWithAppID:@"454638411" store:@"US"];
+//    [[PSUpdateApp manager] startWithAppID:@"454638411" store:@"US"];
   
 //--- CUSTOM URL MODE
 //    You can start with a custom url, if you want to detect the version about a ad hoc distribution app.
-//    [PSUpdateApp manager startWithRoute:FAKE_ROUTE];
+//    [[PSUpdateApp manager] startWithRoute:FAKE_ROUTE];
     
 //--- ALERT STRATEGIES
 //    The strategies change the Alert buttons rappresentation
