@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CWLSynthesizeSingleton.h"
 
 typedef void(^PSUpdateAppCompletionBlock)(NSError *error, BOOL success, id JSON);
 
@@ -19,16 +18,16 @@ typedef enum {
 
 @interface PSUpdateApp : NSObject
 
-CWL_DECLARE_SINGLETON_FOR_CLASS(PSUpdateApp)
+@property (nonatomic, strong) NSString *appID, *appStoreLocation, *appName, *route, *updatePageUrl;
+@property (nonatomic, assign) UpdateStrategy strategy;
+@property (nonatomic, assign) int daysUntilPrompt;
+@property (nonatomic, strong) NSDate *remindDate;
 
-@property (nonatomic) NSString *appID, *appStoreLocation, *appName, *route, *updatePageUrl;
-@property (nonatomic) UpdateStrategy strategy;
-@property (nonatomic) int daysUntilPrompt;
-@property (nonatomic) NSDate *remindDate;
++ (PSUpdateApp *) manager;
 
-+ (id) startWithRoute:(NSString *)route;
-+ (id) startWithAppID:(NSString *)appId;
-+ (id) startWithAppID:(NSString *)appId store:(NSString *)store;
+- (void) startWithRoute:(NSString *)route;
+- (void) startWithAppID:(NSString *)appId;
+- (void) startWithAppID:(NSString *)appId store:(NSString *)store;
 
 - (void) detectAppVersion:(PSUpdateAppCompletionBlock)completionBlock;
 - (void) setURLAdHoc:(NSString *)url;

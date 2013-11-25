@@ -1,23 +1,21 @@
 PODS:
-  - AFNetworking (2.0.0):
+  - AFNetworking (2.0.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.0.0):
+  - AFNetworking/NSURLConnection (2.0.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.0.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.0.0)
-  - AFNetworking/Security (2.0.0)
-  - AFNetworking/Serialization (2.0.0)
-  - AFNetworking/UIKit (2.0.0):
+  - AFNetworking/NSURLSession (2.0.3):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.0.3)
+  - AFNetworking/Security (2.0.3)
+  - AFNetworking/Serialization (2.0.3)
+  - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
   - Kiwi (2.2.1):
     - Kiwi/ARC
@@ -30,7 +28,7 @@ DEPENDENCIES:
   - Kiwi (= 2.2.1)
 
 SPEC CHECKSUMS:
-  AFNetworking: 3fa983b1beaba69566a3374612511e2a6e3fe845
+  AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
   Kiwi: e6524ba0eaa1b28af7af146bdee5314b32aa3edb
 
-COCOAPODS: 0.25.0
+COCOAPODS: 0.28.0

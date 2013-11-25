@@ -12,7 +12,6 @@ The new version 2.0 is based on **[AFNetworking](https://github.com/AFNetworking
 **PSUpdateApp** notifies you if a new version of your iOS application is available in the AppStore or in any other place.<br />
 If a new version is available, PSUpdateApp presents an UIAlertView, that informs you of the newer version, and gives you the option to update the application.<br />
 The component is based on **[AFNetworking](https://github.com/AFNetworking/AFNetworking/ "AFNetworking")** framework, using [`AFJSONRequestOperation`](http://afnetworking.github.com/AFNetworking/Classes/AFJSONRequestOperation.html) method to read and parse the JSON response.<br />
-The object is a singleton based on **Matt Gallager** object ([More informations here](http://www.cocoawithlove.com/2008/11/singletons-appdelegates-and-top-level.html)).
 
 ##Getting Started
 
@@ -37,7 +36,7 @@ $ touch Podfile
 $ edit Podfile
 platform :ios, '6.0' 
 # Or platform :osx, '10.8'
-pod 'PSUpdateApp', '~> 2.0.1'
+pod 'PSUpdateApp', '~> 2.0.2'
 ```
 
 Install into your project:
@@ -74,16 +73,16 @@ PSUpdateApp has a simple integration:
     
 //--- DEFAULT MODE
 //    Start in default mode with your appID.
-    [PSUpdateApp startWithAppID:@"529119648"];
+    [PSUpdateApp manager startWithAppID:@"454638411"];
 
 //--- CUSTOM LOCATION MODE
 //    Start with your appID and with the store location. The default mode set the store location by the device location.
 //    More information about the store code here: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-//    [PSUpdateApp startWithAppID:@"529119648" store:@"US"];
+//    [PSUpdateApp manager startWithAppID:@"454638411" store:@"US"];
   
 //--- CUSTOM URL MODE
 //    You can start with a custom url, if you want to detect the version about a ad hoc distribution app.
-//    [PSUpdateApp startWithRoute:FAKE_ROUTE];
+//    [PSUpdateApp manager startWithRoute:FAKE_ROUTE];
     
 //--- ALERT STRATEGIES
 //    The strategies change the Alert buttons rappresentation
@@ -94,11 +93,11 @@ PSUpdateApp has a simple integration:
 //    RemindStrategy    -> Add the remind me button.
 //    
 //    You can set the strategy with:
-//    [[PSUpdateApp sharedPSUpdateApp] setStrategy:RemindStrategy];
+//    [[PSUpdateApp manager] setStrategy:RemindStrategy];
 //    
 //    With RemindStrategy the alert will appear after 2 days (2 is the default value) from the remind action.
 //    If you want you can set the days until promt with:
-//    [[PSUpdateApp sharedPSUpdateApp] setDaysUntilPrompt:10];
+//    [[PSUpdateApp manager] setDaysUntilPrompt:10];
 
     return YES;
 }
@@ -112,11 +111,11 @@ PSUpdateApp has a simple integration:
 
 //--- DETECT VERSION
 //    Start to detect the version. In this case the block is nil, and the component use the default alert
-    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:nil];
+    [[PSUpdateApp manager] detectAppVersion:nil];
     
 //--- DETECT VERSION WITH BLOCK
 //    You can use the completion block to implement you custom alert and actions
-//    [[PSUpdateApp sharedPSUpdateApp] detectAppVersion:^(NSError *error, BOOL success) {
+//    [[PSUpdateApp manager] detectAppVersion:^(NSError *error, BOOL success) {
 //        NSLog(@"UPDATE");
 //    }];
 }
@@ -158,7 +157,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Version
 
-2.0.1
+2.0.2
 
 ### Created by:
 
