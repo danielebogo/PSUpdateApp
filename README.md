@@ -36,7 +36,7 @@ $ touch Podfile
 $ edit Podfile
 platform :ios, '6.0' 
 # Or platform :osx, '10.8'
-pod 'PSUpdateApp', '~> 2.0.2'
+pod 'PSUpdateApp', '~> 2.0.3'
 ```
 
 Install into your project:
@@ -157,7 +157,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Version
 
-2.0.2
+2.0.3
 
 ### Created by:
 
@@ -171,7 +171,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### License
 The MIT License (MIT)
-Copyright (c) 2013 Paper Street Soap Design
+Copyright (c) 2014 Paper Street Soap Design
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
