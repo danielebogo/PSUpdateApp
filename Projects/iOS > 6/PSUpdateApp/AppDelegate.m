@@ -52,7 +52,15 @@
 //    If you want you can set the days until promt with:
 //    [[PSUpdateApp manager] setDaysUntilPrompt:10];
 
+//--- ALERT TEXT
+//    You can set a custom title and/or a custom message for the PSUpdateApp alert
+//    [[PSUpdateApp manager] setAlertTitle:@"Custom Title"];
+//    [[PSUpdateApp manager] setAlertDefaultMessage:@"Lorem ipsum dolor sit amet, consectetur adipiscing elit."];
 
+//    3 different properties for the message:
+//    alertDefaultMessage   -> default mode
+//    alertForceMessage     -> force the update. The alert has only the update button
+//    alertRemindMessage    -> Add the remind me button.
 
 //    For more information read the documentation here: https://github.com/danielebogo/PSUpdateApp
     

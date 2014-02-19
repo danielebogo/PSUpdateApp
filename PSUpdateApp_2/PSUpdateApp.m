@@ -26,6 +26,35 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
 #define DebugLog(...) { }
 #endif
 
+@interface NSObject (StringValidation)
+- (BOOL) isValidObject;
+- (BOOL) isValidString;
+@end
+
+@implementation NSObject (ObjectValidation)
+
+- (BOOL) isValidObject
+{
+    if ( self && ![self isEqual:[NSNull null]] && [self isKindOfClass:[NSObject class]] )
+        return YES;
+    else
+        return NO;
+}
+
+- (BOOL) isValidString
+{
+    if ( [self isValidObject] && [self isKindOfClass:[NSString class]] && ![(NSString *)self isEqualToString:@""] )
+        return YES;
+    else
+        return NO;
+}
+
+@end
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
 @interface PSUpdateApp () <UIAlertViewDelegate> {
     NSString *_newVersion;
 }
@@ -114,12 +143,12 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
 
 - (BOOL) isNewVersion:(NSDictionary *)dictionary
 {
-    if ( [[dictionary objectForKey:@"results"] count] > 0 ) {
-        _newVersion = [[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"version"];
-        [self setUpdatePageUrl:[[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"trackViewUrl"]];
+    if ( [dictionary[@"results"] count] > 0 ) {
+        _newVersion = dictionary[@"results"][0][@"version"];
+        [self setUpdatePageUrl:dictionary[@"results"][0][@"trackViewUrl"]];
         
-        if ([[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"type"]) {
-            [self setStrategy: [[[[dictionary objectForKey:@"results"] objectAtIndex:0] objectForKey:@"type"] isEqualToString:@"mandatory"] ? ForceStrategy : DefaultStrategy];
+        if ( dictionary[@"results"][0][@"type"] ) {
+            [self setStrategy: [dictionary[@"results"][0][@"type"] isEqualToString:@"mandatory"] ? ForceStrategy : DefaultStrategy];
         }
         
         return [kCurrentAppVersion compare:_newVersion options:NSNumericSearch] == NSOrderedAscending;
@@ -150,12 +179,14 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
 
 - (void) showAlert
 {
+    NSString *alertTitle = [self.alertTitle isValidString] ? self.alertTitle : PSUdateAppLocalizedStrings(@"alert.success.title");
+    
     switch ( self.strategy ) {
         case DefaultStrategy:
         default:
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:PSUdateAppLocalizedStrings(@"alert.success.title")
-                                                                message:[NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.default.text"), self.appName, _newVersion]
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                                message:[self.alertDefaultMessage isValidString] ? self.alertDefaultMessage : [NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.default.text"), self.appName, _newVersion]
                                                                delegate:self
                                                       cancelButtonTitle:PSUdateAppLocalizedStrings(@"alert.button.skip")
                                                       otherButtonTitles:PSUdateAppLocalizedStrings(@"alert.button.update"), nil];
@@ -165,8 +196,8 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
             
         case ForceStrategy:
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:PSUdateAppLocalizedStrings(@"alert.success.title")
-                                                                message:[NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.force.text"), self.appName, _newVersion]
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                                message:[self.alertForceMessage isValidString] ? self.alertForceMessage : [NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.force.text"), self.appName, _newVersion]
                                                                delegate:self
                                                       cancelButtonTitle:PSUdateAppLocalizedStrings(@"alert.button.update")
                                                       otherButtonTitles:nil, nil];
@@ -176,8 +207,8 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
             
         case RemindStrategy:
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:PSUdateAppLocalizedStrings(@"alert.success.title")
-                                                                message:[NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.remindme.text"), _appName, _newVersion]
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                                message:[self.alertRemindMessage isValidString] ? self.alertRemindMessage : [NSString stringWithFormat:PSUdateAppLocalizedStrings(@"alert.success.remindme.text"), _appName, _newVersion]
                                                                delegate:self
                                                       cancelButtonTitle:PSUdateAppLocalizedStrings(@"alert.button.skip")
                                                       otherButtonTitles:PSUdateAppLocalizedStrings(@"alert.button.update"), PSUdateAppLocalizedStrings(@"alert.button.remindme"), nil];

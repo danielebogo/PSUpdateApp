@@ -19,8 +19,9 @@ typedef enum {
 @interface PSUpdateApp : NSObject
 
 @property (nonatomic, strong) NSString *appID, *appStoreLocation, *appName, *route, *updatePageUrl;
+@property (nonatomic, strong) NSString *alertTitle, *alertDefaultMessage, *alertForceMessage, *alertRemindMessage;
 @property (nonatomic, assign) UpdateStrategy strategy;
-@property (nonatomic, assign) int daysUntilPrompt;
+@property (nonatomic, assign) NSUInteger daysUntilPrompt;
 @property (nonatomic, strong) NSDate *remindDate;
 
 + (PSUpdateApp *) manager;
