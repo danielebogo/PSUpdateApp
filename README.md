@@ -36,7 +36,7 @@ $ touch Podfile
 $ edit Podfile
 platform :ios, '6.0' 
 # Or platform :osx, '10.8'
-pod 'PSUpdateApp', '~> 2.0.3'
+pod 'PSUpdateApp', '~> 2.0.4'
 ```
 
 Install into your project:
@@ -99,6 +99,16 @@ PSUpdateApp has a simple integration:
 //    If you want you can set the days until promt with:
 //    [[PSUpdateApp manager] setDaysUntilPrompt:10];
 
+//--- ALERT TEXT
+//    You can set a custom title and/or a custom message for the PSUpdateApp alert
+//    [[PSUpdateApp manager] setAlertTitle:@"Custom Title"];
+//    [[PSUpdateApp manager] setAlertDefaultMessage:@"Lorem ipsum dolor sit amet, consectetur adipiscing elit."];
+
+//    3 different properties for the message:
+//    alertDefaultMessage   -> default mode
+//    alertForceMessage     -> force the update. The alert has only the update button
+//    alertRemindMessage    -> Add the remind me button.
+
     return YES;
 }
 ```
@@ -157,7 +167,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Version
 
-2.0.3
+2.0.4
 
 ### Created by:
 
