@@ -147,9 +147,8 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
         _newVersion = dictionary[@"results"][0][@"version"];
         [self setUpdatePageUrl:dictionary[@"results"][0][@"trackViewUrl"]];
         
-        if ( dictionary[@"results"][0][@"type"] ) {
+        if ( dictionary[@"results"][0][@"type"] )
             [self setStrategy: [dictionary[@"results"][0][@"type"] isEqualToString:@"mandatory"] ? ForceStrategy : DefaultStrategy];
-        }
         
         return [kCurrentAppVersion compare:_newVersion options:NSNumericSearch] == NSOrderedAscending;
     }

@@ -36,7 +36,7 @@ $ touch Podfile
 $ edit Podfile
 platform :ios, '6.0' 
 # Or platform :osx, '10.8'
-pod 'PSUpdateApp', '~> 2.0.4'
+pod 'PSUpdateApp', '~> 2.0.5'
 ```
 
 Install into your project:
@@ -167,7 +167,7 @@ Use `setURLAdHoc:` if you want to create a `stringWithFormat:` between your cust
 
 ### Version
 
-2.0.4
+2.0.5
 
 ### Created by:
 
