@@ -110,22 +110,21 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
              DebugLog(@"JSON response: %@", responseObject);
              
              if ( [self isNewVersion:responseObject] ) {
-                 if ( completionBlock && ![self isSkipVersion] )
-                     completionBlock(nil, YES, responseObject);
-                 else if ( ![self isSkipVersion] )
+                 BOOL skip = [self isSkipVersion];
+                 BOOL showAlert = YES;
+                 
+                 if ( completionBlock )
+                     showAlert = completionBlock(nil, YES, skip, responseObject);
+                 if ( showAlert && !skip )
                      [self showAlert];
-                 else {
-                     if ( completionBlock )
-                         completionBlock(nil, NO, responseObject);
-                 }
              } else {
                  if ( completionBlock )
-                     completionBlock(nil, NO, responseObject);
+                     completionBlock(nil, NO, NO, responseObject);
              }
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             if ( completionBlock && ![self isSkipVersion] )
-                 completionBlock(error, NO, nil);
+             if ( completionBlock )
+                 completionBlock(error, NO, NO, nil);
          }];
 }
 

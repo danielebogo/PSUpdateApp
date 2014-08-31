@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^PSUpdateAppCompletionBlock)(NSError *error, BOOL success, id JSON);
+typedef BOOL(^PSUpdateAppCompletionBlock)(NSError *error, BOOL updateAvailable, BOOL skip, id JSON);
 
 typedef enum {
     DefaultStrategy = 0,
